@@ -11,21 +11,17 @@ export default class ProductController {
     // perceba que nesta classe não existe regra de negócio
     // método para inserir o produto
     public async create(request: Request, response: Response): Promise<Response> {
-
-        console.log('oi')
         
         // recupera a informação do usuário - corpo da página
         let {name, price, quantity} = request.body
-        console.log('oi')
         // salva no BD
         let createProduct = new CreateProductService();
-        console.log('oi')
         let newProduct = await createProduct.execute({
             name, 
             price,
             quantity
         })
-        console.log('oi')
+
         return response.json(newProduct) // novo produto retornado
     }
 
@@ -68,4 +64,4 @@ export default class ProductController {
         
         return response.json(product)
     }
-} 
+}

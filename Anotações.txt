@@ -17,3 +17,8 @@ express ->  npm install @types/express -D <- (no terminal)
 
 comuns 
     "express": "^4.17.1"
+
+yarn typeorm migration:create -n CreateUsers
+npm add bcryptjs// dependencia para instalar criptografia nas senhas
+npm add -D @types/bcryptjs
+import {hash} from 'bcryptjs'
